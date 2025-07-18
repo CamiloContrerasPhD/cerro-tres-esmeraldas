@@ -23,9 +23,44 @@ Move all three Trinos left without waking the spirits!
 
 ---
 
-## Play Now
+## Run Locally
 
-Play directly in your browser: **[Click here to play](URL_TO_YOUR_GAME)**.
+Follow these steps to launch the game on your own machine.
+
+### Prerequisites
+
+| Tool                 | Minimum version   | Check with         |
+| -------------------- | ----------------- | ------------------ |
+| **Python**           | 3.9+              | `python --version` |
+| **pip**              | comes with Python | `pip --version`    |
+| **Git** *(optional)* | any               | `git --version`    |
+
+> **Windows users**: install Python from [https://python.org](https://python.org), **enable “Add Python to PATH”** during setup. macOS/Linux usually ship with Python 3 but you may still prefer the official installer or `brew`/`apt`.
+
+### Quick Start
+
+```bash
+# 1 · Grab the code (Git recommended)
+ git clone https://github.com/your‑user/cerro‑esmeraldas.git
+ cd cerro‑esmeraldas
+
+# 2 · (Optional) create a virtual environment
+ python -m venv .venv
+ # Windows
+ .venv\Scripts\activate
+ # macOS/Linux
+ source .venv/bin/activate
+
+# 3 · Install dependencies
+ pip install pygame
+
+# 4 · Run the game
+ python main.py
+```
+
+A window (1280×720) should appear; resizing is supported.
+
+Press <kbd>R</kbd> to reset, <kbd>Esc</kbd> to quit.
 
 ---
 
