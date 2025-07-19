@@ -1,5 +1,14 @@
 import pygame
 import sys
+import os
+
+def resource_path(relative_path):
+    """Obtiene la ruta absoluta al recurso, compatible con PyInstaller y desarrollo."""
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 # Inicialización de PyGame
 pygame.init()
@@ -213,31 +222,31 @@ move_speed = 8.65  # Velocidad de animación de barra
 
 # Cargar sonidos
 try:
-    bar_move_sound = pygame.mixer.Sound("src/bar_move.wav")
-    win_sound = pygame.mixer.Sound("src/win.wav")
-    lose_sound = pygame.mixer.Sound("src/lose.wav")
+    bar_move_sound = pygame.mixer.Sound(resource_path("src/bar_move.wav"))
+    win_sound = pygame.mixer.Sound(resource_path("src/win.wav"))
+    lose_sound = pygame.mixer.Sound(resource_path("src/lose.wav"))
 except Exception as e:
     bar_move_sound = win_sound = lose_sound = None
     print("No se pudieron cargar los sonidos:", e)
 
 # Cargar imagen de rana
 try:
-    frog_img = pygame.image.load("src/ranas.png").convert_alpha()
+    frog_img = pygame.image.load(resource_path("src/ranas.png")).convert_alpha()
 except Exception as e:
     frog_img = None
     print("No se pudo cargar la imagen de la rana:", e)
 
 # Cargar imágenes de piedras para los supresores
 try:
-    stone_grey_img = pygame.image.load("src/grey_stone.png").convert_alpha()
-    stone_green_img = pygame.image.load("src/green_stone.png").convert_alpha() 
+    stone_grey_img = pygame.image.load(resource_path("src/grey_stone.png")).convert_alpha()
+    stone_green_img = pygame.image.load(resource_path("src/green_stone.png")).convert_alpha() 
 except Exception as e:
     stone_grey_img = stone_green_img = None
     print("No se pudieron cargar las imágenes de piedra:", e)
 
 # Cargar imagen de fondo
 try:
-    background_img = pygame.image.load("src/background_.png").convert()
+    background_img = pygame.image.load(resource_path("src/background_.png")).convert()
 except Exception as e:
     background_img = None
     print("No se pudo cargar la imagen de fondo:", e)
@@ -459,15 +468,15 @@ def draw_supresor_buttons():
 
 # Cargar imágenes de íconos de volumen
 try:
-    sound_on_img = pygame.image.load("src/sound_on.png").convert_alpha()
-    sound_off_img = pygame.image.load("src/sound_off.png").convert_alpha()
+    sound_on_img = pygame.image.load(resource_path("src/sound_on.png")).convert_alpha()
+    sound_off_img = pygame.image.load(resource_path("src/sound_off.png")).convert_alpha()
 except Exception as e:
     sound_on_img = sound_off_img = None
     print("No se pudieron cargar los íconos de volumen:", e)
 
 # Cargar sonido de jungla de fondo
 try:
-    pygame.mixer.music.load("src/sonido.mp3")
+    pygame.mixer.music.load(resource_path("src/sonido.mp3"))
     pygame.mixer.music.set_volume(volume_level)
     pygame.mixer.music.play(-1)  # Loop infinito
 except Exception as e:
