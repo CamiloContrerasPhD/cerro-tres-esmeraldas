@@ -2,6 +2,7 @@ import pygame
 import sys
 import os
 
+# Esto es una prueba para GitHub 
 def resource_path(relative_path):
     """Obtiene la ruta absoluta al recurso, compatible con PyInstaller y desarrollo."""
     try:
