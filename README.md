@@ -7,7 +7,7 @@
 
 This small Python game recreates (and re‑skins) the classic **Quarrasi Lock** puzzle from Allen B. Downey’s *Think Like a Programmer*—but relocates the action to the mist‑shrouded **Sierra Nevada de Santa Marta** in Colombia.
 
-We were inspired both by Downey’s book **and** by **Daniel Tam’s** JavaScript adaptation ([danielthetam/TheQuarrasiLock](https://github.com/danielthetam/TheQuarrasiLock)). Our goal is to provide a desktop variant built with **Pygame** that teachers and puzzle lovers can run completely offline.
+I was inspired both by Downey’s book **and** by **Daniel Tam’s** JavaScript adaptation ([danielthetam/TheQuarrasiLock](https://github.com/danielthetam/TheQuarrasiLock)). My goal is to provide a desktop variant built with **Pygame** that teachers and puzzle lovers can run completely offline.
 
 ---
 
